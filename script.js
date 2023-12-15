@@ -32,6 +32,21 @@ function realizarConversao(caractereCifrado) {
         
         return numeros[posicaoCaractereDecifrado];
     }
+
+    //remove acentos do caractere
+    if ("áàãâ".indexOf(caractereCifrado) != -1) {
+        caractereCifrado = 'a';
+    } else if ("éê".indexOf(caractereCifrado) != -1) {
+        caractereCifrado = 'e';
+    } else if (caractereCifrado == 'í') {
+        caractereCifrado = 'i';
+    } else if ("óôõ".indexOf(caractereCifrado) != -1) {
+        caractereCifrado = 'o';
+    } else if (caractereCifrado == 'ú') {
+        caractereCifrado = 'u';
+    } else if (caractereCifrado == 'ç') {
+        caractereCifrado = 'c';
+    }
     
     let posicaoCaractereCifrado = alfabeto.indexOf(caractereCifrado);
     let posicaoCaractereDecifrado = posicaoCaractereCifrado - 3;
